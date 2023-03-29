@@ -8,6 +8,17 @@
     <title>Welcome to developer skills</title>
 </head>
 <body>
+    <ul>
+        <% skills.array.forEach(function(s) { %>
+            <li>
+                <%= s.skill %>
+                - 
+                <%= s.done ? 'done' : 'not done' %>
+            </li>
+        <% }); %>
+        <a href="/skills">Learn Skills</a>
+
+    </ul>
     
 </body>
 </html>
