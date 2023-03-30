@@ -8,17 +8,17 @@
     <title>Welcome to developer skills</title>
 </head>
 <body>
+    <h1>Skills</h1>
     <ul>
-        <% skills.array.forEach(function(s) { %>
-            <li>
-                <%= s.skill %>
-                - 
-                <%= s.done ? 'done' : 'not done' %>
-            </li>
+        <% skills.forEach(function(t) { %>
+          <li>
+            <a href="/skills/<%= t.id %>"><%= t.skill %></a>
+            <%= t.skill %>
+              - 
+            <%= t.done ? 'done' : 'not done' %>
+          </li>
         <% }); %>
-        <a href="/skills">Learn Skills</a>
-
-    </ul>
+      </ul>
     
 </body>
 </html>
