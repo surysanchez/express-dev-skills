@@ -2,7 +2,8 @@
 const Skill = require('../models/skill');
 
 module.exports = {
-   index
+   index,
+   show
 };
 function index(req, res) {
     res.render('skills/index', {
