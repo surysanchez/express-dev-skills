@@ -1,4 +1,4 @@
-var skills = [
+const skills = [
     {id: 123, skill: 'html', done: true},
     {id: 234, skill: 'css', done: true},
     {id: 345, skill: 'JavaScript', done: true},
@@ -6,10 +6,16 @@ var skills = [
 ]
 
 module.exports = {
-    getSkills
+    getSkills,
+    showSkills
 
 }
 
+function showSkills(id) {
+  // URL params are strings - convert to a number    
+  id = parseInt(id);
+  return skills.find(skill => skill.id === id);
+}
 
 function getSkills() {
     return skills
