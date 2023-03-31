@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var methodOverride = require('method-override')
+
 var indexRouter = require('./routes/index');
 var skillsRouter = require('./routes/skills');
 
@@ -13,11 +15,22 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(function(req, res, next) {
+  console.log('Hello Express!')
+  res.locals.date = new Date().toLocaleDateString()
+  next();
+})
+// Log method , path and HTTP inf
 app.use(logger('dev'));
+// Process data in the body if it's jason
 app.use(express.json());
+// Create a property on req.body for each input and text area in the form
 app.use(express.urlencoded({ extended: false }));
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+// Override _method
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/skills', skillsRouter);

@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<h3> Today's date <br><%= date %></h3>
 <ul>
   <% skills.forEach(function(s) { %>
     
@@ -11,5 +12,6 @@
   </li>
   <% }); %>
 </ul>
+<a href="/skills/new">Add new skill</a>
 
 <%- include('../partials/footer') %>
