@@ -1,16 +1,6 @@
-<%- include('./partials/header') %>
+<%- include('../partials/header') %>
 
-    <h1>Skills</h1>
     <h3><%= skill.skill %></h3>
     <h3>Complete: <%= skill.done ? 'Yes' : 'No' %></h3>
-    <ul>
-        <% skills.forEach(function(t) { %>
-          <li>
-            <a href="/skills/<%= t.id %>"><%= t.skill %></a>
-            <%= t.skill %>
-              - 
-            <%= t.done ? 'done' : 'not done' %>
-          </li>
-        <% }); %>
-      </ul>
-      <%- include('./partials/footer') %>
+    
+<%- include('../partials/footer') %>
