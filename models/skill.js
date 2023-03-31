@@ -18,5 +18,5 @@ function showSkills(id) {
 }
 
 function getSkills() {
-    return skills
+    return skills;
 }
