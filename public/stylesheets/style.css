@@ -1,8 +1,27 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('https://cdn.pixabay.com/photo/2016/02/15/11/40/background-1201008__480.jpg ');
+  background-repeat: no-repeat;
+  background-size: cover ;
+  height: 100vh;
+  justify-content: center;
+
+
 }
 
 a {
-  color: #00B7FF;
+  color: #277be9;
+}
+.delete-form {
+  display: inline-block;
+  margin-right: 10px;
+}
+	
+.delete-form button {
+  color: red;
+}
+	
+li {
+  list-style: none;
 }
