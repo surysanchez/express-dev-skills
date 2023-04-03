@@ -1,3 +1,5 @@
+const { updateSkill } = require("../controllers/skills");
+
 const skills = [
     {id: 123, skill: 'HTML', done: true},
     {id: 234, skill: 'CSS', done: true},
@@ -9,9 +11,15 @@ module.exports = {
     getSkills,
     showSkills,
     create,
-    deleteOne
+    deleteOne, 
+    update
 }
 
+function update(id, updateSkill) {
+    id = parseInt(id);
+    const skill = skills.find(skill => skill.id === id);
+    Object.assign(skill, updateSkill);
+}
 function deleteOne(id) {
     id = parseInt(id);
     const idx = skills.findIndex(skill =>skill.id === id);
